@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+
+    <script src="https://kit.fontawesome.com/edd2bbd2f7.js" crossorigin="anonymous"></script>
+</head>
+<body class="scroll">
+    <div class="dashboardMainContainer">
+        <div class="dashboardSideBar" id="dashboardSideBar">
+            <h3 class="dashboardLogo">I-CARE</h3>
+            <div class="dashboardSideUser">
+                <img src="/Picture/Profile.jpg" alt="user image" id="userImage"/>
+                <h3>AIMAN HAKIM</h3>
+            </div>
+        <div class="dashboardsidemenu">
+        <ul class="menulist">
+            <li class="menuActive">
+                <a href="dashboard.html"><i class="fa fa-dashboard menuIcon"></i><span class="menuText">Dashboard</span></a>
+            </li>
+            <li class="menuActive">
+                <a href="services.html"><i class="fa-solid fa-gear"></i><span class="menuText">Services</span></a>
+            </li>
+            <li class="menuActive">
+                <a href="appointment.html"><i class="fa-solid fa-star"></i><span class="menuText">Appointments</span></a>
+            </li>
+            <li class="menuActive">
+                <a href="progress.html"><i class="fa-solid fa-file-invoice"></i><span class="menuText">Progress</span></a>
+            </li>
+        </ul>
+        </div>
+     </div>
+        <div class="dashboardContentContainer" id="dashboardContentContainer">
+            <div class="dashboardTopNav">
+                    <a href="" id="toggleBtn"><i class="fa fa-navicon"></i></a>
+                    <a href="homepage.html" id="logoutBtn"><i class="fa fa-power-off"></i>log out</a>
+            </div>
+            <div class="appointmentContainer">
+                <h1>Appointments</h1>
+                <div class="appointmentForm">
+                    <h2>Update Appointment</h2>
+                    <form action="#" method="post">
+                        <label for="date">Date:</label>
+                        <input type="date" id="date" name="date" required>
+                        <label for="time">Time:</label>
+                        <input type="time" id="time" name="time" required>
+                        <label for="reason">Reason for Appointment:</label>
+                        <textarea id="reason" name="reason" rows="4" required></textarea>
+                        <label for="counselor">Select Counselor:</label>
+                        <select id="counselor" name="counselor" required>
+                            <option value="counselor1">Dr. Saifuddin</option>
+                            <option value="counselor2">Dr. Amirul</option>
+                            <option value="counselor2">Dr. Aiman</option>
+                        </select>
+                    </form>
+                    <a href="appointment.html"><button type="submit">Update</button></a>
+                </div>

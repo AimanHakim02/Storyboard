@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <script src="https://kit.fontawesome.com/edd2bbd2f7.js" crossorigin="anonymous"></script>
+</head>
+<body class="scroll">
+    <div class="dashboardMainContainer">
+        
+        <div class="dashboardSideBar" id="dashboardSideBar">
+            <h3 class="dashboardLogo">I-CARE</h3>
+            <div class="dashboardSideUser">
+                <img src="/Picture/Profile.jpg" alt="user image" id="userImage"/>
+                <h3>AIMAN HAKIM</h3>
+            </div>
+            
+            <div class="dashboardsidemenu">
+                <ul class="menulist">
+                    <li class="menuActive">
+                        <a href="dashboard.html"><i class="fa fa-dashboard menuIcon"></i><span class="menuText">Dashboard</span></a>
+                    </li>
+                    <li class="menuActive">
+                        <a href="services.html"><i class="fa-solid fa-gear"></i><span class="menuText">Services</span></a>
+                    </li>
+                    <li class="menuActive">
+                        <a href="appointment.html"><i class="fa-solid fa-star"></i><span class="menuText">Appointments</span></a>
+                    </li>
+                    <li class="menuActive">
+                        <a href="progress.html"><i class="fa-solid fa-file-invoice"></i><span class="menuText">Progress</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="dashboardContentContainer" id="dashboardContentContainer">
+            
+            <div class="dashboardTopNav">
+                <a href="" id="toggleBtn"><i class="fa fa-navicon"></i></a>
+                <a href="homepage.html" id="logoutBtn"><i class="fa fa-power-off"></i>log out</a>
+            </div>
+
+            
+            <div class="progressContent">
+                <h1>Progress</h1>
+
+                
+                <div class="progressCharts">
+                    <div class="chart">
+                        <h2>Mood Tracking</h2>
+                        <canvas id="moodChart"></canvas>
+                    </div>
+                </div>
+
+                
+                <div class="informationTable">
+                    <h2>Information</h2>
+                    <table>
+                        <tr>
+                            <th>Session</th>
+                            <th>Date</th>
+                            <th>Summary</th>
+                        </tr>
+                        <tr>
+                            <td>Session 1</td>
+                            <td>15 April 2024</td>
+                            <td>Discussed stressors, practiced relaxation techniques, and identified triggers</td>
+                        </tr>
+                        <tr>
+                            <td>Session 2</td>
+                            <td>22 April 2024</td>
+                            <td>Patient demonstrated increased awareness of triggers and commitment to practice techniques</td>
+                        </tr>
+                        <tr>
+                            <td>Session 3</td>
+                            <td>29 April 2024</td>
+                            <td>Patient shows a positive outcomes</td>
+                        </tr>
+                        <tr>
+                            <td>Session 4</td>
+                            <td>6 May 2024</td>
+                            <td>Patient still need appointment in order to keep a close eye </td>
+                        </tr>
+                        
+                    </table>
+                </div>
+
+                
+                <div class="feedbackForm">
+                    <h2>Feedback</h2>
+                    <form action="" method="post">
+                        <label for="feedback">Please provide your feedback:</label><br>
+                        <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+   
+    const labels = ['Week 1', 'Week 2', 'Week 3', 'Week 4'];
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Mood',
+            backgroundColor: 'rgba(255, 159, 64, 0.2)',
+            borderColor: 'rgba(255, 159, 64, 1)',
+            borderWidth: 2,
+            data: [5, 6, 7, 8], 
+        }]
+    };
+
+    
+    const config = {
+        type: 'line',
+        data: data,
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    min: 0,
+                    max: 10,
+                    ticks: {
+                        stepSize: 1
+                    }
+                }
+            }
+        }
+    };
+
+    
+    var ctx = document.getElementById('moodChart').getContext('2d');
+    new Chart(ctx, config);
+
+    const feedbackForm = document.querySelector('.feedbackForm form');
+        
+        feedbackForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const feedback = document.getElementById('feedback').value;
+            
+            if (feedback.trim() !== '') {
+                alert('Feedback submitted successfully!');
+                
+                feedbackForm.reset();
+            } else {
+                alert('Please provide your feedback before submitting.');
+            }
+        });
+    
+</script>
+        </body>
+        </html>
